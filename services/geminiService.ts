@@ -5,7 +5,7 @@ const getAIClient = () => {
   if (!process.env.API_KEY) {
     throw new Error("API Key is missing");
   }
-  return new GoogleGenAI({ apiKey: process.env.API_KEY });
+  return new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 };
 
 export const generateSuggestions = async (projectName: string, cityName?: string): Promise<AISuggestion> => {
