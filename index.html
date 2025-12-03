@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulStep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;600&display=swap');
+      
+      body {
+        font-family: 'Inter', 'Noto Serif SC', sans-serif;
+        background-color: #FDFBF7; /* Warm Paper / Rice Paper */
+        color: #1C1917; /* Stone-900 (Ink) */
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      h1, h2, h3, h4, .serif {
+        font-family: 'Playfair Display', 'Noto Serif SC', serif;
+      }
+
+      /* Custom scrollbar - Minimalist */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #E7E5E4; /* Stone-200 */
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #A8A29E;
+      }
+
+      /* Input autofill fix for minimalist aesthetic */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active{
+          -webkit-box-shadow: 0 0 0 30px #FDFBF7 inset !important;
+          -webkit-text-fill-color: #1C1917 !important;
+      }
+      
+      /* Subtle fade in */
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Pop and Spin Animation for Celebration Icon */
+      @keyframes popSpin {
+        0% { opacity: 0; transform: scale(0.5) rotate(-45deg); }
+        50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+        100% { opacity: 1; transform: scale(1) rotate(0deg); }
+      }
+      
+      .animate-pop-spin {
+        animation: popSpin 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      /* Zen Float/Fall Animation for Final Celebration */
+      @keyframes floatDown {
+        0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+        10% { opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg) translateX(20px); opacity: 0; }
+      }
+
+      .animate-float {
+        animation-name: floatDown;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
